@@ -1,0 +1,45 @@
+{
+ "manifest_version":2,
+ "name":"ClipBoard Images",
+ "version":"0.0.1",
+ "description": "get the images from clipboard",
+ "content_scripts":[
+   {
+     "matches":[
+        "<all_urls>"
+     ],
+     "js": [
+       "scripts/vendor/jquery.min.js",
+       "scripts/vendor/bootstrap.min.js",
+       "scripts/vendor/jquery-ui.js",
+       "scripts/vendor/jquery.emojis.js",
+       "scripts/vendor/jquery.emojipicker.js",
+       "scripts/vendor/arrive.min.js",
+       "scripts/contentscript/content.js"
+     ],
+         "run_at": "document_end",
+         "all_frames": false
+   }
+ ],
+ "background":{
+   "scripts":["background.js"]
+ },
+
+   "browser_action":{
+   "default_icon":"ct.png"
+ },
+ "permissions": [
+     "unlimitedStorage",
+     "<all_urls>",
+     "storage",
+     "tabs",
+     "clipboardRead",
+     "clipBoardWrite",
+     "contextMenus"
+ ],
+ "web_accessible_resources": [
+  "styles/*",
+  "Images/*",
+  "fonts/*"
+]
+}
